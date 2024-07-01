@@ -45,6 +45,8 @@ Node *LLVector(vector<int> &arr) {
   return head;
 }
 
+void BubbleSort(Node *head) { BubbleSort(Node * head) }
+
 void DeleteNode(Node *&head, int data) {
   Node *temp = head;
   if (head->data == data) {
@@ -75,19 +77,13 @@ int main(int argc, char *argv[]) {
 
   printData(y);
 
-  vector<int> n = {1, 2, 3, 4, 5};
+  vector<int> n = {2, 1, 4, 3, 5};
 
   Node *x = LLVector(n);
   printData(x);
+  cout << " \n";
 
-  DeleteNode(x, 3);
-  printData(x);
-
-  DeleteNode(x, 1);
-
-  printData(x);
-
-  DeleteNode(x, 5);
+  BubbleSort(x);
 
   printData(x);
 

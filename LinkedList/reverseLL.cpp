@@ -68,28 +68,35 @@ void DeleteNode(Node *&head, int data) {
   delete temp;
 }
 
+void Rev(Node *head) {
+  Node *start = head;
+  Node *end = head;
+  while (end->next != nullptr) {
+
+    end = end->next;
+  }
+
+  // Count N
+
+  while (start != end) {
+    int i = 0;
+    int temp = start->data;
+    start->data = end->data;
+    end->data = temp;
+    start = start->next;
+    i++;
+    for (; i < 5; i++) {
+      end = end->next;
+    }
+    end = head;
+  }
+}
+
 int main(int argc, char *argv[]) {
-  Node *y = new Node(5, nullptr);
-  printData(y);
-  addNew(y, 7);
-
-  printData(y);
-
   vector<int> n = {1, 2, 3, 4, 5};
 
   Node *x = LLVector(n);
+  Rev(x);
   printData(x);
-
-  DeleteNode(x, 3);
-  printData(x);
-
-  DeleteNode(x, 1);
-
-  printData(x);
-
-  DeleteNode(x, 5);
-
-  printData(x);
-
   return 0;
 }
